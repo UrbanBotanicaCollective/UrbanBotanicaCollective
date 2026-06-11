@@ -568,6 +568,74 @@
     display: block;
   }
 
+
+  /* ── MOBILE RESPONSIVE ── */
+  @media (max-width: 600px) {
+
+    /* Hero */
+    .hero { padding: 36px 20px 48px; }
+    .logo-text-banner { letter-spacing: 0.05em; }
+    .hero-sub { font-size: 14px; }
+    .hero-cta { padding: 13px 28px; font-size: 14px; }
+    .jar-wrap { width: 120px; height: 128px; }
+
+    /* Sections */
+    section { padding: 56px 20px; }
+    .gallery-section { padding: 56px 20px; }
+    .booking-section { padding: 56px 20px 72px; }
+
+    /* Steps */
+    .steps { gap: 14px; }
+    .step { flex-direction: column; gap: 10px; padding: 16px; }
+    .step-num { font-size: 22px; }
+
+    /* Pills */
+    .pills { gap: 8px; }
+    .pill { font-size: 13px; padding: 8px 12px; }
+
+    /* Bio card — stack vertically on mobile */
+    .bio-card { flex-direction: column; align-items: center; text-align: center; padding: 24px 20px; }
+    .bio-avatar { width: 110px; height: 110px; }
+    .bio-role { font-size: 10px; }
+
+    /* Review grid — single column */
+    .reviews-grid { grid-template-columns: 1fr; gap: 12px; }
+    .review-stats { gap: 8px; }
+    .stat-num { font-size: 20px; }
+
+    /* Gallery — single column featured, 2-col grid below */
+    .gallery-grid { gap: 8px; }
+    .gallery-item.featured img { height: 220px; }
+    .gallery-item:not(.featured) img { height: 160px; }
+
+    /* Booking */
+    .booking-box { padding: 40px 20px; }
+    .booking-cta { padding: 14px 28px; font-size: 14px; }
+    .bp-bl { left: -14px !important; }
+    .bp-br { right: -14px !important; }
+
+    /* Plant scene */
+    .plant-scene { height: 90px; }
+    .plant-scene svg { width: 260px; }
+    .mushroom-scene { gap: 20px; height: 70px; }
+    .mushroom-scene svg { width: 260px; }
+
+    /* Scroll hint */
+    .scroll-hint { font-size: 10px; }
+    .scroll-arrow { width: 34px; height: 34px; font-size: 14px; }
+
+    /* Divider spacing */
+    .divider { margin: 0; }
+  }
+
+  @media (max-width: 400px) {
+    .logo-text-banner { font-size: 20px !important; letter-spacing: 0.03em; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-item.featured { grid-column: 1; }
+    .gallery-item:not(.featured) img { height: 180px; }
+    .review-stats { flex-direction: column; gap: 8px; }
+  }
+
 </style>
 </head>
 <body>

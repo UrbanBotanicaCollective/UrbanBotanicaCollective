@@ -84,6 +84,8 @@
     margin: 0 auto 36px;
     position: relative;
     animation: float 4s ease-in-out infinite;
+    display: block;
+    left: 0; right: 0;
   }
   .sp { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.7); }
   .sp1{width:6px;height:6px;top:8px;right:18px;animation:sparkle 2s infinite 0s}
@@ -600,7 +602,7 @@
     .logo-text-banner { letter-spacing: 0.05em; }
     .hero-sub { font-size: 14px; }
     .hero-cta { padding: 13px 28px; font-size: 14px; }
-    .jar-wrap { width: 120px; height: 128px; }
+    .jar-wrap { width: 120px; height: 128px; margin-left: auto; margin-right: auto; display: block; }
 
     /* Sections */
     section { padding: 56px 20px; }
@@ -657,6 +659,360 @@
     .gallery-item.featured { grid-column: 1; }
     .gallery-item:not(.featured) img { height: 180px; }
     .review-stats { flex-direction: column; gap: 8px; }
+  }
+
+
+  /* ── PACKAGES ── */
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 32px;
+  }
+  .package-card {
+    background: linear-gradient(160deg, rgba(89,105,60,0.13) 0%, rgba(14,21,16,0.7) 100%);
+    border: 1px solid rgba(156,158,115,0.22);
+    border-radius: 18px;
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+  .package-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(156,158,115,0.45);
+  }
+  .pkg-featured {
+    border-color: rgba(156,158,115,0.5);
+    background: linear-gradient(160deg, rgba(89,105,60,0.22) 0%, rgba(14,21,16,0.8) 100%);
+    box-shadow: 0 0 28px rgba(89,105,60,0.2);
+  }
+  .pkg-badge {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #9c9e73;
+    background: rgba(156,158,115,0.12);
+    border: 1px solid rgba(156,158,115,0.25);
+    border-radius: 20px;
+    padding: 4px 10px;
+    width: fit-content;
+  }
+  .pkg-badge-featured {
+    color: #e8f0d8;
+    background: rgba(89,105,60,0.35);
+    border-color: rgba(156,158,115,0.5);
+  }
+  .pkg-icon { font-size: 28px; line-height: 1; }
+  .pkg-name {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #e8f0d8;
+    margin: 0;
+  }
+  .pkg-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; flex: 1; }
+  .pkg-includes {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .pkg-includes li { font-size: 12px; color: rgba(232,240,216,0.75); line-height: 1.5; }
+  .pkg-dim { font-size: 11px; opacity: 0.6; }
+  .pkg-price {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #e8f0d8;
+    margin-top: 4px;
+  }
+  .pkg-price span { font-size: 12px; font-weight: 400; opacity: 0.6; font-family: 'Raleway', sans-serif; }
+
+  /* Add-on */
+  .addon-card {
+    margin-top: 16px;
+    background: linear-gradient(135deg, rgba(89,105,60,0.1) 0%, rgba(14,21,16,0.6) 100%);
+    border: 1px dashed rgba(156,158,115,0.35);
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .addon-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #9c9e73;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .addon-name { font-size: 15px; font-weight: 600; color: #e8f0d8; margin: 0 0 6px; }
+  .addon-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+  .addon-price {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #e8f0d8;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .addon-price span { font-size: 11px; font-weight: 400; opacity: 0.6; font-family: 'Raleway', sans-serif; display: block; }
+
+  /* Packages CTA */
+  .pkg-cta-wrap {
+    margin-top: 28px;
+    text-align: center;
+  }
+  .pkg-cta-text {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .pkg-cta {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #9c9e73;
+    border-bottom: 1px solid rgba(156,158,115,0.4);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s, border-color 0.2s;
+    padding-bottom: 2px;
+  }
+  .pkg-cta:hover { color: #e8f0d8; border-color: rgba(232,240,216,0.5); }
+
+  /* Mobile packages */
+  @media (max-width: 600px) {
+    .packages-grid { grid-template-columns: 1fr; }
+    .addon-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .addon-price { font-size: 18px; }
+  }
+
+
+  /* Custom build dropdowns */
+  .pkg-custom { grid-column: 1 / -1; }
+  .custom-dropdowns { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+  .custom-select-wrap { display: flex; flex-direction: column; gap: 4px; }
+  .custom-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #9c9e73; font-weight: 600; }
+  .custom-select {
+    background: rgba(14,21,16,0.8);
+    border: 1px solid rgba(156,158,115,0.3);
+    border-radius: 10px;
+    color: #e8f0d8;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    padding: 10px 14px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239c9e73' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .custom-select:focus { outline: none; border-color: rgba(156,158,115,0.6); }
+  .custom-select option { background: #1a2218; color: #e8f0d8; }
+  .pkg-price-custom { font-size: 18px; }
+
+  @media (max-width: 600px) {
+    .pkg-custom { grid-column: 1; }
+  }
+
+
+  /* Custom total price */
+  .custom-total {
+    background: rgba(89,105,60,0.15);
+    border: 1px solid rgba(156,158,115,0.3);
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: center;
+    margin-top: 4px;
+  }
+  .custom-total-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #9c9e73;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .custom-total-price {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #e8f0d8;
+    line-height: 1.1;
+  }
+  .custom-total-price span { font-size: 12px; font-weight: 400; opacity: 0.6; font-family: 'Raleway', sans-serif; }
+  .custom-total-note {
+    font-size: 11px;
+    color: rgba(232,240,216,0.45);
+    margin-top: 4px;
+  }
+  .custom-total-price.has-value { color: #e8f0d8; }
+
+
+  /* ── Package select buttons ── */
+  .pkg-select-btn {
+    width: 100%;
+    padding: 11px 16px;
+    background: transparent;
+    border: 1px solid rgba(156,158,115,0.35);
+    border-radius: 10px;
+    color: #9c9e73;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 6px;
+  }
+  .pkg-select-btn:hover {
+    background: rgba(89,105,60,0.2);
+    border-color: rgba(156,158,115,0.6);
+    color: #e8f0d8;
+  }
+  .pkg-select-btn.selected {
+    background: rgba(89,105,60,0.35);
+    border-color: rgba(156,158,115,0.7);
+    color: #e8f0d8;
+  }
+  .addon-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .addon-btn { width: auto; padding: 8px 16px; font-size: 12px; }
+
+  /* ── Order Summary ── */
+  .order-summary {
+    background: linear-gradient(135deg, #2a3d1e 0%, #1e2e14 100%);
+    border: 1px solid rgba(156,158,115,0.55);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-top: 28px;
+    animation: fadeUp 0.4s ease both;
+    box-shadow: 0 0 32px rgba(89,105,60,0.25), inset 0 1px 0 rgba(156,158,115,0.2);
+  }
+  .order-summary-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .order-summary-left { flex: 1; }
+  .order-label {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #9c9e73;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .order-item {
+    font-size: 13px;
+    color: #e8f0d8;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .order-item-price { color: #9c9e73; white-space: nowrap; }
+  .order-summary-right {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .order-total-label {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #9c9e73;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .order-total-price {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #e8f0d8;
+    margin-bottom: 12px;
+  }
+  .order-book-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #59693c 0%, #3d4f28 100%);
+    color: #e8f0d8;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 24px;
+    border: 1px solid rgba(156,158,115,0.5);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    white-space: nowrap;
+  }
+  .order-book-btn:hover { background: linear-gradient(135deg, #6b7b4a 0%, #4a5e32 100%); transform: translateY(-1px); }
+
+  @media (max-width: 600px) {
+    .order-summary-inner { flex-direction: column; }
+    .order-summary-right { text-align: left; width: 100%; }
+    .addon-right { flex-direction: row; align-items: center; }
+  }
+
+
+  .enquire-form { display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: 4px; }
+  .enquire-input {
+    background: rgba(14,21,16,0.7);
+    border: 1px solid rgba(156,158,115,0.3);
+    border-radius: 10px;
+    color: #e8f0d8;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    padding: 10px 14px;
+    width: 100%;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .enquire-input::placeholder { color: rgba(232,240,216,0.35); }
+  .enquire-input:focus { border-color: rgba(156,158,115,0.65); }
+  .enquire-input.error { border-color: rgba(220,80,80,0.6); }
+  .order-book-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #59693c 0%, #3d4f28 100%);
+    color: #e8f0d8;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 20px;
+    border-radius: 24px;
+    border: 1px solid rgba(156,158,115,0.5);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    width: 100%;
+    text-align: center;
+    margin-top: 2px;
+  }
+  .order-book-btn:hover { background: linear-gradient(135deg, #6b7b4a 0%, #4a5e32 100%); transform: translateY(-1px); }
+
+  @media (max-width: 600px) {
+    .order-summary-right { width: 100%; }
+    .enquire-form { width: 100%; }
   }
 
 </style>
@@ -858,6 +1214,166 @@
       <p class="bio-text">Based in Newcastle, NSW, Monty founded Urban Botanica Collective in 2018 with a mission to reconnect people with the natural world through biophilic design, permaculture, and living green spaces. With 14+ years of hands-on experience, his workshops are as calming as the terrariums you build in them.</p>
     </div>
   </div>
+</section>
+
+<hr class="divider">
+
+<!-- ── PACKAGES ── -->
+<section>
+  <p class="section-label">choose your experience</p>
+  <h2 class="section-title">Terrarium Packages</h2>
+  <p class="section-body">Every package includes our terrarium building PDF guide. Whether you're a first-timer or ready to go big — there's a build for you.</p>
+
+  <div class="packages-grid">
+
+    <div class="package-card reveal reveal-delay-1">
+      <div class="pkg-badge">Starter</div>
+      <div class="pkg-icon">📄</div>
+      <h3 class="pkg-name">Entry Level</h3>
+      <p class="pkg-desc">The perfect starting point — everything you need to know to build your own terrarium at home.</p>
+      <ul class="pkg-includes">
+        <li>✦ Terrarium building PDF guide</li>
+        <li>✦ Step-by-step instructions</li>
+        <li>✦ DIY at your own pace</li>
+        <li>✦ Links to all my favourite products</li>
+      </ul>
+      <div class="pkg-price">$37 <span>AUD</span></div>
+      <button class="pkg-select-btn" onclick="togglePackage(this, 'Entry Level PDF Guide', 37)">+ Add to order</button>
+    </div>
+
+    <div class="package-card reveal reveal-delay-2 pkg-featured">
+      <div class="pkg-badge pkg-badge-featured">Best Value</div>
+      <div class="pkg-icon">🌿</div>
+      <h3 class="pkg-name">Terra XL</h3>
+      <p class="pkg-desc">Super Glass Fish Bowl 33cm — a generous build with room for a truly living landscape.</p>
+      <ul class="pkg-includes">
+        <li>✦ Super Glass Fish Bowl 33cm <span class="pkg-dim">(19.5TD×33D×32H cm)</span></li>
+        <li>✦ Soil, mixed plants & moss</li>
+        <li>✦ Hardscape materials</li>
+        <li>✦ PDF guide included</li>
+      </ul>
+      <div class="pkg-price">$170 <span>AUD</span></div>
+      <button class="pkg-select-btn" onclick="togglePackage(this, 'Terra XL', 170)">+ Add to order</button>
+    </div>
+
+    <div class="package-card reveal reveal-delay-3">
+      <div class="pkg-badge">Premium</div>
+      <div class="pkg-icon">🏆</div>
+      <h3 class="pkg-name">Terra Jumbo</h3>
+      <p class="pkg-desc">Jumbo Glass Fish Bowl 45cm — built for those who want something truly extraordinary.</p>
+      <ul class="pkg-includes">
+        <li>✦ Jumbo Glass Fish Bowl 45cm <span class="pkg-dim">(23TD×44D×40H cm)</span></li>
+        <li>✦ Exotic mixed plants & a variety of moss</li>
+        <li>✦ Exotic rocks & hardscape</li>
+        <li>✦ PDF guide included</li>
+      </ul>
+      <div class="pkg-price">$250 <span>AUD</span></div>
+      <button class="pkg-select-btn" onclick="togglePackage(this, 'Terra Jumbo', 250)">+ Add to order</button>
+    </div>
+
+    <div class="package-card reveal reveal-delay-4 pkg-custom">
+      <div class="pkg-badge">Bespoke</div>
+      <div class="pkg-icon">🎨</div>
+      <h3 class="pkg-name">Custom Build</h3>
+      <p class="pkg-desc">Design your own terrarium — choose your bowl, plants, moss and hardscape.</p>
+
+      <div class="custom-dropdowns">
+        <div class="custom-select-wrap">
+          <label class="custom-label">🫙 Bowl Size</label>
+          <select class="custom-select">
+            <option value="">Select bowl size...</option>
+            <option>XL Fish Bowl 28cm — $120</option>
+            <option>Super Fish Bowl 33cm — $150</option>
+            <option>Jumbo Fish Bowl 45cm — $220</option>
+          </select>
+        </div>
+        <div class="custom-select-wrap">
+          <label class="custom-label">🌱 Plants</label>
+          <select class="custom-select">
+            <option value="">Select your plants...</option>
+            <option>Mixed Varieties of Plants & Moss — $39</option>
+            <option>Exotic Mixed Plants & Moss — $68</option>
+            <option>Mixed Moss — $27</option>
+          </select>
+        </div>
+        <div class="custom-select-wrap">
+          <label class="custom-label">🪨 Hardscape (800g)</label>
+          <select class="custom-select">
+            <option value="">Select hardscape...</option>
+            <option>Black Lava Rock — $12</option>
+            <option>Smooth River Rock — $15</option>
+            <option>Dragon Stone — $22</option>
+            <option>Seiryu Rock — $18</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="custom-total">
+        <div class="custom-total-label">Estimated Total</div>
+        <div class="custom-total-price" id="custom-total">$0 <span>AUD</span></div>
+        <div class="custom-total-note">Select all options to see your price</div>
+      </div>
+      <ul class="pkg-includes">
+        <li>✦ Soil included</li>
+        <li>✦ PDF guide included</li>
+      </ul>
+      <button class="pkg-select-btn" id="custom-add-btn" onclick="addCustomToOrder(this)">+ Add to order</button>
+    </div>
+
+  </div>
+
+  <!-- Add-ons -->
+  <div class="addon-card reveal">
+    <div class="addon-left">
+      <span class="addon-label">Optional Add-on</span>
+      <h3 class="addon-name">🔧 4-in-1 Stainless Steel Aquascaping Tools</h3>
+      <p class="addon-desc">Professional-grade aquascaping tools — perfect for planting, sculpting and detailing your terrarium with precision.</p>
+    </div>
+    <div class="addon-right">
+      <div class="addon-price">+$30 <span>AUD</span></div>
+      <button class="pkg-select-btn addon-btn" onclick="togglePackage(this, '4-in-1 Aquascaping Tools', 30)">+ Add</button>
+    </div>
+  </div>
+
+  <div class="addon-card reveal">
+    <div class="addon-left">
+      <span class="addon-label">Optional Add-on</span>
+      <h3 class="addon-name">🎋 Bioscape LED Landscape Bamboo</h3>
+      <p class="addon-desc">Elevate your terrarium with ambient LED bamboo lighting — the perfect finishing touch for any build.</p>
+    </div>
+    <div class="addon-right">
+      <div class="addon-price">+$100 <span>AUD</span></div>
+      <button class="pkg-select-btn addon-btn" onclick="togglePackage(this, 'Bioscape LED Bamboo', 100)">+ Add</button>
+    </div>
+  </div>
+
+
+  <!-- Order Summary -->
+  <div class="order-summary" id="order-summary" style="display:none;">
+    <div class="order-summary-inner">
+      <div class="order-summary-left">
+        <p class="order-label">Your Order</p>
+        <div class="order-items" id="order-items"></div>
+      </div>
+      <div class="order-summary-right">
+        <p class="order-total-label">Total</p>
+        <p class="order-total-price" id="order-total">$0</p>
+        <div class="enquire-form" id="enquire-form">
+        <input class="enquire-input" type="text" id="enq-name" placeholder="Your name *" required>
+        <input class="enquire-input" type="email" id="enq-email" placeholder="Email address *" required>
+        <input class="enquire-input" type="tel" id="enq-mobile" placeholder="Mobile number *" required>
+        <button class="order-book-btn" onclick="sendEnquiry(this)">Send enquiry →</button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="pkg-cta-wrap reveal">
+    <p class="pkg-cta-text">Want to learn more about the products and packages we stock?</p>
+    <a class="pkg-cta" href="https://www.urbanbotanicaco.com/events" target="_blank">Explore all products →</a>
+  </div>
+
 </section>
 
 <hr class="divider">
@@ -1163,6 +1679,173 @@ const bpObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 const bpTarget = document.querySelector('.booking-box');
 if (bpTarget) bpObserver.observe(bpTarget);
+
+
+// ── Custom build live price calculator ──
+(function() {
+  const selects = document.querySelectorAll('.custom-select');
+  const totalEl = document.getElementById('custom-total');
+  const noteEl = totalEl ? totalEl.nextElementSibling : null;
+
+  // Price map — extract from option text
+  function getPrice(select) {
+    const val = select.value;
+    if (!val) return null;
+    const match = val.match(/\$(\d+)/);
+    return match ? parseInt(match[1]) : null;
+  }
+
+  function updateTotal() {
+    let total = 0;
+    let allSelected = true;
+    let anySelected = false;
+
+    selects.forEach(sel => {
+      const price = getPrice(sel);
+      if (price !== null) {
+        total += price;
+        anySelected = true;
+      } else {
+        allSelected = false;
+      }
+    });
+
+    if (!totalEl) return;
+
+    if (anySelected) {
+      totalEl.innerHTML = '$' + total + ' <span>AUD</span>';
+      totalEl.classList.add('has-value');
+      if (noteEl) {
+        noteEl.textContent = allSelected
+          ? '✦ Includes soil & PDF guide'
+          : 'Select remaining options to complete your build';
+      }
+    } else {
+      totalEl.innerHTML = '$0 <span>AUD</span>';
+      totalEl.classList.remove('has-value');
+      if (noteEl) noteEl.textContent = 'Select all options to see your price';
+    }
+  }
+
+  selects.forEach(sel => sel.addEventListener('change', updateTotal));
+})();
+
+
+// ── Package order builder ──
+const orderItems = {};
+
+function updateOrderSummary() {
+  const summary = document.getElementById('order-summary');
+  const itemsEl = document.getElementById('order-items');
+  const totalEl = document.getElementById('order-total');
+
+  const keys = Object.keys(orderItems);
+  if (keys.length === 0) {
+    summary.style.display = 'none';
+    return;
+  }
+
+  summary.style.display = 'block';
+  let total = 0;
+  itemsEl.innerHTML = '';
+  keys.forEach(name => {
+    const price = orderItems[name];
+    total += price;
+    const div = document.createElement('div');
+    div.className = 'order-item';
+    div.innerHTML = `<span>${name}</span><span class="order-item-price">$${price}</span>`;
+    itemsEl.appendChild(div);
+  });
+  totalEl.textContent = '$' + total + ' AUD';
+}
+
+function togglePackage(btn, name, price) {
+  if (orderItems[name] !== undefined) {
+    delete orderItems[name];
+    btn.textContent = '+ Add to order';
+    btn.classList.remove('selected');
+  } else {
+    orderItems[name] = price;
+    btn.textContent = '✓ Added';
+    btn.classList.add('selected');
+  }
+  updateOrderSummary();
+}
+
+function addCustomToOrder(btn) {
+  const selects = document.querySelectorAll('.custom-select');
+  let name = 'Custom Build';
+  let total = 0;
+  let allSelected = true;
+  const parts = [];
+
+  selects.forEach(sel => {
+    if (!sel.value) { allSelected = false; return; }
+    const match = sel.value.match(/\$(\d+)/);
+    if (match) total += parseInt(match[1]);
+    // Get short name before the dash
+    const shortName = sel.value.split('—')[0].trim();
+    parts.push(shortName);
+  });
+
+  if (!allSelected) {
+    btn.textContent = '⚠ Select all options first';
+    btn.style.color = '#c8a06a';
+    setTimeout(() => {
+      btn.textContent = orderItems['Custom Build'] ? '✓ Added' : '+ Add to order';
+      btn.style.color = '';
+    }, 2000);
+    return;
+  }
+
+  name = 'Custom: ' + parts.join(' + ');
+  if (orderItems[name] !== undefined) {
+    delete orderItems[name];
+    btn.textContent = '+ Add to order';
+    btn.classList.remove('selected');
+  } else {
+    orderItems[name] = total;
+    btn.textContent = '✓ Added';
+    btn.classList.add('selected');
+  }
+  updateOrderSummary();
+}
+
+
+function sendEnquiry(btn) {
+  const name   = document.getElementById('enq-name');
+  const email  = document.getElementById('enq-email');
+  const mobile = document.getElementById('enq-mobile');
+  let valid = true;
+
+  [name, email, mobile].forEach(el => {
+    el.classList.remove('error');
+    if (!el.value.trim()) { el.classList.add('error'); valid = false; }
+  });
+  if (!valid) return;
+
+  // Build order summary for email body
+  const items = Object.entries(orderItems).map(([k,v]) => k + ' — $' + v).join('\n');
+  const total = Object.values(orderItems).reduce((a,b) => a+b, 0);
+
+  const subject = encodeURIComponent('Terrarium Workshop Enquiry — ' + name.value.trim());
+  const body = encodeURIComponent(
+    'Hi Monty,\n\n' +
+    'I\'d love to learn more about the terrarium packages.\n\n' +
+    'Name: ' + name.value.trim() + '\n' +
+    'Email: ' + email.value.trim() + '\n' +
+    'Mobile: ' + mobile.value.trim() + '\n\n' +
+    'Selected packages:\n' + (items || 'None selected') + '\n\n' +
+    'Estimated Total: $' + total + ' AUD\n\n' +
+    'Please reach out at your earliest convenience.\n\n' +
+    'Thanks!'
+  );
+
+  window.location.href = 'mailto:monty@urbanbotanicacollective.com?subject=' + subject + '&body=' + body;
+
+  btn.textContent = '✓ Opening your email app...';
+  btn.style.opacity = '0.7';
+}
 
 </script>
 
